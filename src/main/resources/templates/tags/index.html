@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+<h1 th:text="${title}"></h1>
+<ul>
+  <li th:each="tag : ${tags}">
+    <span th:text="${tag.name}"></span>
+  </li>
+</ul>
+<a href="/tags/create" class="btn btn-primary">Create New Tag</a>
+</body>
+</html>
