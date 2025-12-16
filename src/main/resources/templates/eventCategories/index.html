@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"> </head>
+<body class="container">
+<header th:replace="fragments :: navigation"></header>
+
+<h1>All Event Categories</h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="category : ${categories}">
+    <td th:text="${category.id}"></td>
+    <td><a th:text="${category.name}" th:href="'/events?categoryId' + ${category.id}"></a></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
